@@ -11,7 +11,7 @@ api = Api(blueprint,
           title='demo sql',
           version='1.0',
           description='demo sql',
-          contact="Akanksha Srivastav",
+          contact="Dev",
           )
 
 api.add_namespace(new_api)

@@ -19,12 +19,12 @@ class MySQLManager(object):
                                                 host='localhost',
                                                 database='demo',
                                                 user='root',
-                                                password='Riksha@2803')
+                                                password='your-pass')
             connection_object = connection_pool.get_connection()
             cursor = connection_object.cursor()
             return cursor
 
-    def get_from_sqlDB(self):
+    def get_from_sqlDB(self):s
         try:
             cursor = self._get_sql_session()
             cursor.execute("SELECT * FROM demo1;")

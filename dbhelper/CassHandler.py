@@ -31,7 +31,7 @@ def cassandra_init():
         cql_cluster.shutdown()
     if cql_session is not None:
         cql_session.shutdown()
-    # auth = PlainTextAuthProvider(username='admin', password='p@s$w0rd')
+
     connection.setup(
         hosts=["0.0.0.0"],
         default_keyspace='test_keyspace', consistency=cassandra.ConsistencyLevel.ONE, lazy_connect=True, retry_connect=True,
