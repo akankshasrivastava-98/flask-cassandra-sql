@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "Riksha@2803"
+
+
+  cassandra-node1:
+    image: bitnami/cassandra:latest
+    environment:
+      - CASSANDRA_SEEDS=cassandra-node1
+
+  web-app:
+    build: .
+    ports:
+      - 5000:5000
+    environment:
+      - CASSANDRA_SEEDS=cassandra-node1
+      - MYSQL_ROOT_PASSWORD
+    depends_on:
+      - db
+      - cassandra-node1
